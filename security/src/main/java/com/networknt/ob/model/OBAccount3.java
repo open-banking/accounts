@@ -11,8 +11,10 @@ public class OBAccount3  {
     private OBBranchAndFinancialInstitutionIdentification5 Servicer;
     private String AccountId;
     private String Description;
+    private String LastTransactionAmount;
     private String Currency;
     private OBExternalAccountType1Code AccountType;
+    private String Balance;
     private OBExternalAccountSubType1Code AccountSubType;
     private String Nickname;
 
@@ -55,6 +57,15 @@ public class OBAccount3  {
         this.Description = Description;
     }
 
+    @JsonProperty("LastTransactionAmount")
+    public String getLastTransactionAmount() {
+        return LastTransactionAmount;
+    }
+
+    public void setLastTransactionAmount(String LastTransactionAmount) {
+        this.LastTransactionAmount = LastTransactionAmount;
+    }
+
     @JsonProperty("Currency")
     public String getCurrency() {
         return Currency;
@@ -71,6 +82,15 @@ public class OBAccount3  {
 
     public void setAccountType(OBExternalAccountType1Code AccountType) {
         this.AccountType = AccountType;
+    }
+
+    @JsonProperty("Balance")
+    public String getBalance() {
+        return Balance;
+    }
+
+    public void setBalance(String Balance) {
+        this.Balance = Balance;
     }
 
     @JsonProperty("AccountSubType")
@@ -107,22 +127,24 @@ public class OBAccount3  {
                Objects.equals(Servicer, OBAccount3.Servicer) &&
                Objects.equals(AccountId, OBAccount3.AccountId) &&
                Objects.equals(Description, OBAccount3.Description) &&
+               Objects.equals(LastTransactionAmount, OBAccount3.LastTransactionAmount) &&
                Objects.equals(Currency, OBAccount3.Currency) &&
                Objects.equals(AccountType, OBAccount3.AccountType) &&
+               Objects.equals(Balance, OBAccount3.Balance) &&
                Objects.equals(AccountSubType, OBAccount3.AccountSubType) &&
                Objects.equals(Nickname, OBAccount3.Nickname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Account, Servicer, AccountId, Description, Currency, AccountType, AccountSubType, Nickname);
+        return Objects.hash(Account, Servicer, AccountId, Description, LastTransactionAmount, Currency, AccountType, Balance, AccountSubType, Nickname);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class OBAccount3 {\n");
-        sb.append("    Account: ").append(toIndentedString(Account)).append("\n");        sb.append("    Servicer: ").append(toIndentedString(Servicer)).append("\n");        sb.append("    AccountId: ").append(toIndentedString(AccountId)).append("\n");        sb.append("    Description: ").append(toIndentedString(Description)).append("\n");        sb.append("    Currency: ").append(toIndentedString(Currency)).append("\n");        sb.append("    AccountType: ").append(toIndentedString(AccountType)).append("\n");        sb.append("    AccountSubType: ").append(toIndentedString(AccountSubType)).append("\n");        sb.append("    Nickname: ").append(toIndentedString(Nickname)).append("\n");
+        sb.append("    Account: ").append(toIndentedString(Account)).append("\n");        sb.append("    Servicer: ").append(toIndentedString(Servicer)).append("\n");        sb.append("    AccountId: ").append(toIndentedString(AccountId)).append("\n");        sb.append("    Description: ").append(toIndentedString(Description)).append("\n");        sb.append("    LastTransactionAmount: ").append(toIndentedString(LastTransactionAmount)).append("\n");        sb.append("    Currency: ").append(toIndentedString(Currency)).append("\n");        sb.append("    AccountType: ").append(toIndentedString(AccountType)).append("\n");        sb.append("    Balance: ").append(toIndentedString(Balance)).append("\n");        sb.append("    AccountSubType: ").append(toIndentedString(AccountSubType)).append("\n");        sb.append("    Nickname: ").append(toIndentedString(Nickname)).append("\n");
         sb.append("}");
         return sb.toString();
     }

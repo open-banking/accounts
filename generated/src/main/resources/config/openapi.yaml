@@ -323,6 +323,14 @@ components:
           type: string
           minLength: 1
           maxLength: 70
+        Balance:
+          description: The current account balance in the account currency to get a quick overview of the account.
+          type: string
+          pattern: ^\d{1,13}\.\d{1,5}$
+        LastTransactionAmount:
+          description: The amount of the last transaction for quick confirmation if the last transaction is processed.
+          type: string
+          pattern: ^\d{1,13}\.\d{1,5}$
         Account:
           items:
             $ref: "#/components/schemas/OBCashAccount5"
@@ -495,3 +503,5 @@ components:
         - UK.OBIE.SortCodeAccountNumber
       minLength: 1
       maxLength: 40
+
+
