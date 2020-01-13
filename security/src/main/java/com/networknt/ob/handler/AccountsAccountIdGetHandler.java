@@ -54,7 +54,7 @@ public class AccountsAccountIdGetHandler implements LightHttpHandler {
             connBalance = client.connect(new URI(balanceHost), Http2Client.WORKER, Http2Client.BUFFER_POOL, OptionMap.create(UndertowOptions.ENABLE_HTTP2, true)).get();
             connTransaction = client.connect(new URI(transactionHost), Http2Client.WORKER, Http2Client.BUFFER_POOL, OptionMap.create(UndertowOptions.ENABLE_HTTP2, true)).get();
         } catch (Exception e) {
-            logger.error("Execption:", e);
+            logger.debug("Execption:", e);
         }
     }
 
