@@ -35,9 +35,9 @@ public class AccountsAccountIdGetHandler implements LightHttpHandler {
     static Logger logger = LoggerFactory.getLogger(AccountsAccountIdGetHandler.class);
     static Cluster cluster = SingletonServiceFactory.getBean(Cluster.class);
     static String balanceHost;
-    static String balancePath = "/balances/accounts/";
+    static String balancePath = "/balances/";
     static String transactionHost;
-    static String transactionPath = "/transactions/accounts/";
+    static String transactionPath = "/transactions/";
     static String tag = Server.getServerConfig().getEnvironment();
     static Http2Client client = Http2Client.getInstance();
     static ClientConnection connBalance;
